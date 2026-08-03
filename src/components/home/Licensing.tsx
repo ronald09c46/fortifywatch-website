@@ -36,7 +36,7 @@ const points = [
 ];
 
 const certificates = [
-  { label: "DTI Certificate of Registration", href: "/images/certificates/dti-certificate.pdf", image: null },
+  { label: "DTI Certificate of Registration", href: "/images/certificates/dti-certificate.png", image: "/images/certificates/dti-certificate.png"},
   { label: "SSS Certificate", href: "/images/certificates/sss.jpg", image: "/images/certificates/sss.jpg" },
   { label: "PhilHealth Certificate", href: "/images/certificates/philhealth.jpg", image: "/images/certificates/philhealth.jpg" },
   { label: "Pag-IBIG Certificate", href: "/images/certificates/pagibig.png", image: "/images/certificates/pagibig.png" },
