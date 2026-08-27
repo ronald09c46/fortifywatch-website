@@ -3,6 +3,8 @@ import Card from "@/components/ui/Card";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { StaggerGrid, StaggerItem } from "@/components/ui/StaggerGrid";
 
+// `hidden: true` keeps a value in the data (for easy re-enabling later)
+// without rendering it on the site.
 const values = [
   {
     icon: ShieldCheck,
@@ -23,18 +25,23 @@ const values = [
     icon: ListChecks,
     title: "Discipline",
     description: "Post orders followed precisely, shift after shift.",
+    hidden: true,
   },
   {
     icon: Handshake,
     title: "Commitment",
     description: "Long-term partnership, not transactional manpower.",
+    hidden: true,
   },
   {
     icon: Sparkles,
     title: "Service Excellence",
     description: "Courteous, client-facing security that reflects your brand.",
+    hidden: true,
   },
 ];
+
+const visibleValues = values.filter((v) => !v.hidden);
 
 export default function CoreValues() {
   return (
@@ -48,13 +55,13 @@ export default function CoreValues() {
             The Standard Behind Every Deployment!
           </h2>
           <p className="mt-5 text-muted-foreground">
-            Six commitments that shape how our officers carry themselves on
+            Core commitments that shape how our officers carry themselves on
             your premises.
           </p>
         </AnimatedSection>
 
-        <StaggerGrid className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {values.map((v) => (
+        <StaggerGrid className="mx-auto mt-14 grid max-w-4xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {visibleValues.map((v) => (
             <StaggerItem key={v.title}>
               <Card icon={v.icon} title={v.title} description={v.description} />
             </StaggerItem>
