@@ -26,7 +26,7 @@ export default function Services() {
             Our Services
           </p>
           <h2 className="mt-4 font-display text-4xl font-bold text-foreground">
-            Complete ecSurity Coverage, One Accountable Partner!
+            Complete Security Coverage, One Accountable Partner!
           </h2>
           <p className="mt-5 text-muted-foreground">
             From manned guarding to CCTV and consultancy — designed around

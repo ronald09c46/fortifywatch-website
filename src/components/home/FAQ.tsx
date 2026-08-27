@@ -12,7 +12,7 @@ export default function FAQ() {
             FAQ
           </p>
           <h2 className="mt-4 font-display text-4xl font-bold text-foreground">
-            Frequently asked questions
+            Frequently Asked Questions
           </h2>
         </AnimatedSection>
 

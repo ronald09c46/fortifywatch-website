@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Target, Telescope } from "lucide-react";
 import PageHeader from "@/components/ui/PageHeader";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import AnimatedCard from "@/components/ui/AnimatedCard";
@@ -19,7 +20,7 @@ export default function AboutPage() {
       {/* Page Header */}
       <PageHeader
         kicker="About Us"
-        title="A licensed agency built on discipline"
+        title="A Licensed Agency Built On Discipline"
         description="FortifyWatch Security Agency protects people, businesses, and assets across the Philippines with screened, trained, and closely supervised security personnel."
       />
 
@@ -32,7 +33,7 @@ export default function AboutPage() {
             </p>
 
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-foreground sm:mt-4 sm:text-4xl">
-              Security delivered by people you can rely on
+              Security Delivered By People You Can Rely On
             </h2>
 
             <div className="mt-6 space-y-4">
@@ -60,27 +61,56 @@ export default function AboutPage() {
 
           {/* Mission & Vision */}
           <div className="mx-auto mt-10 grid max-w-5xl gap-5 sm:mt-12 sm:gap-6 md:grid-cols-2">
-            <AnimatedCard direction="left">
-              <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-primary">
+            <AnimatedCard direction="left" className="group flex flex-col items-center">
+              <div className="grid size-12 place-items-center rounded-xl bg-primary/10 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-primary/20">
+                <Target size={22} className="text-primary" />
+              </div>
+
+              <p className="mt-4 font-display text-xs font-bold uppercase tracking-[0.2em] text-primary">
                 Our Mission
               </p>
 
               <p className="mt-3 text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
-                To provide highly trained, disciplined, and professional
-                security personnel committed to protecting people, businesses,
-                and assets through integrity, vigilance, and excellence.
+                FortifyWatch Security Agency is committed to:
               </p>
+
+              <ul className="mt-3 w-full space-y-2 text-left text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
+                <li className="flex gap-2">
+                  <span className="text-primary">&bull;</span>
+                  Providing reliable and professional security services
+                  tailored to our clients&apos; needs.
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-primary">&bull;</span>
+                  Protecting lives, properties, and business operations
+                  through effective security management.
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-primary">&bull;</span>
+                  Upholding the highest standards of discipline, integrity,
+                  and accountability.
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-primary">&bull;</span>
+                  Building lasting partnerships through quality service and
+                  continuous improvement.
+                </li>
+              </ul>
             </AnimatedCard>
 
-            <AnimatedCard direction="right">
-              <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-primary">
+            <AnimatedCard direction="right" className="group flex flex-col items-center justify-center">
+              <div className="grid size-12 place-items-center rounded-xl bg-primary/10 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-primary/20">
+                <Telescope size={22} className="text-primary" />
+              </div>
+
+              <p className="mt-4 font-display text-xs font-bold uppercase tracking-[0.2em] text-primary">
                 Our Vision
               </p>
 
               <p className="mt-3 text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
-                To become one of the most trusted and respected private
-                security agencies in the Philippines by delivering
-                world-class security solutions.
+                To be one of the most trusted and respected private security
+                agencies in the Philippines by delivering professional,
+                dependable, and client-focused security services.
               </p>
             </AnimatedCard>
           </div>
@@ -96,13 +126,13 @@ export default function AboutPage() {
       <AnimatedSection>
         <Process
           kicker="How We Work"
-          title="Our engagement timeline"
+          title="Our Engagement Timeline"
         />
       </AnimatedSection>
 
       {/* Why Choose Us */}
       <AnimatedSection>
-        <WhyChooseUs title="Eight reasons clients stay with us" />
+        <WhyChooseUs title="Eight Reasons Clients Stay With Us" />
       </AnimatedSection>
 
       {/* CTA */}

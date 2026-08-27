@@ -56,7 +56,7 @@ const reasons = [
 ];
 
 export default function WhyChooseUs({
-  title = "Corporate-grade security, without the bureaucracy",
+  title = "Corporate-Grade Security, Without The Bureaucracy",
 }: {
   title?: string;
 }) {

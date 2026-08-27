@@ -53,7 +53,7 @@ export default function Licensing() {
             Licensing & Certifications
           </p>
           <h2 className="mt-4 font-display text-4xl font-bold text-foreground">
-            Credentials available for client verification
+            Credentials Available For Client Verification
           </h2>
         </AnimatedSection>
 

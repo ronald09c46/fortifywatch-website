@@ -13,7 +13,7 @@ export default function CTA() {
           Ready When You Are
         </p>
         <h2 className="mt-4 font-display text-4xl font-bold text-foreground">
-          Let&apos;s build a security plan around your site
+          Let&apos;s Build A Security Plan Around Your Site
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-muted-foreground">
           Request a free security survey and receive a written deployment

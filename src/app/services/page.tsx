@@ -17,7 +17,7 @@ export default function ServicesPage() {
     <>
       <PageHeader
         kicker="Our Services"
-        title="Twelve security capabilities, one accountable partner"
+        title="Twelve Security Capabilities, One Accountable Partner"
         description="Manned guarding, security technology, and advisory services designed around your site, your risk profile, and your compliance requirements."
       />
 
@@ -28,7 +28,7 @@ export default function ServicesPage() {
               Complete Coverage
             </p>
             <h2 className="mt-4 font-display text-3xl font-bold text-foreground">
-              Choose a single service or a fully integrated program
+              Choose A Single Service Or A Fully Integrated Program
             </h2>
             <p className="mt-4 text-muted-foreground">
               Each engagement includes a written security survey, documented

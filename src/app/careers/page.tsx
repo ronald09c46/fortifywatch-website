@@ -46,7 +46,7 @@ export default function CareersPage() {
     <>
       <PageHeader
         kicker="Careers"
-        title="Build a disciplined career in security"
+        title="Build A Disciplined Career In Security"
         description="We are continuously hiring licensed security personnel for commercial, industrial, and residential posts in Cavite and Metro Manila."
       />
 
@@ -57,7 +57,7 @@ export default function CareersPage() {
               Open Positions
             </p>
             <h2 className="mt-4 font-display text-3xl font-bold text-foreground">
-              Current hiring requirements
+              Current Hiring Requirements
             </h2>
           </div>
 
@@ -87,7 +87,7 @@ export default function CareersPage() {
           </div>
 
           <div className="mt-16 rounded-2xl border border-border bg-card p-10 text-center">
-            <h3 className="font-display text-xl font-bold text-foreground">How to apply</h3>
+            <h3 className="font-display text-xl font-bold text-foreground">How To Apply</h3>
             <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
               Walk in at our office or send your r&eacute;sum&eacute; and
               clearances to{" "}

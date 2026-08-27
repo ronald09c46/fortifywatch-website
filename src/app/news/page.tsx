@@ -11,17 +11,17 @@ export const metadata: Metadata = {
 const posts = [
   {
     date: "June 2026",
-    title: "FortifyWatch expands industrial detachment coverage in Cavite",
+    title: "FortifyWatch Expands Industrial Detachment Coverage In Cavite",
     body: "Additional supervisors and patrol units have been assigned to support growing warehouse and logistics accounts across the province.",
   },
   {
     date: "April 2026",
-    title: "In-service refresher training completed by 200+ personnel",
+    title: "In-Service Refresher Training Completed By 200+ Personnel",
     body: "Modules covered emergency response, customer service, incident documentation, and access control discipline.",
   },
   {
     date: "February 2026",
-    title: "CCTV solutions division strengthened",
+    title: "CCTV Solutions Division Strengthened",
     body: "Expanded technical capability now allows integrated camera design and installation alongside manned guarding.",
   },
 ];
@@ -31,7 +31,7 @@ export default function NewsPage() {
     <>
       <PageHeader
         kicker="News & Updates"
-        title="What's happening at FortifyWatch"
+        title="What's Happening At FortifyWatch"
         description="Operational milestones, training programs, and service expansions across our detachments."
       />
 

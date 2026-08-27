@@ -21,7 +21,7 @@ export default function Clients() {
             Clients We Protect
           </p>
           <h2 className="mt-4 font-display text-4xl font-bold text-foreground">
-            Trusted across industries and communities
+            Trusted Across Industries And Communities
           </h2>
         </AnimatedSection>
 

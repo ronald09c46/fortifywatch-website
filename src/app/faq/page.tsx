@@ -14,7 +14,7 @@ export default function FAQPage() {
     <>
       <PageHeader
         kicker="FAQ"
-        title="Questions clients ask before deployment"
+        title="Questions Clients Ask Before Deployment"
         description="If your question isn't covered here, our account officers respond to inquiries within one business day."
       />
 

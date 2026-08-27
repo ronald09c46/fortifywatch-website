@@ -13,7 +13,7 @@ export default function ContactPage() {
     <>
       <PageHeader
         kicker="Contact Us"
-        title="Request a quote or free security survey"
+        title="Request A Quote Or Free Security Survey"
         description="Tell us about your site and coverage requirements. Our account officers respond within one business day."
       />
       <Contact />

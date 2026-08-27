@@ -36,7 +36,7 @@ const steps = [
 
 export default function Process({
   kicker = "Our Security Process",
-  title = "Six steps from first call to continuous improvement",
+  title = "Six Steps From First Call To Continuous Improvement",
 }: {
   kicker?: string;
   title?: string;

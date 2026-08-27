@@ -68,7 +68,7 @@ export default function Hero() {
           animate="show"
           custom={0.1}
         >
-          Providing You the Best in Private Security!
+          Providing You The Best In Private Security!
         </motion.h1>
 
         <motion.p
