@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
 
 const quickLinks = [
   { label: "About Us", href: "/about" },
@@ -56,8 +56,13 @@ export default function Footer() {
             <ul className="mt-5 space-y-3 text-sm">
               {quickLinks.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="hover:text-primary">
-                    {l.label}
+                  <Link
+                    href={l.href}
+                    className="group inline-flex items-center gap-1 transition-colors hover:text-primary"
+                  >
+                    <span className="transition-transform duration-200 group-hover:translate-x-1">
+                      {l.label}
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -71,8 +76,13 @@ export default function Footer() {
             <ul className="mt-5 space-y-3 text-sm">
               {services.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="hover:text-primary">
-                    {l.label}
+                  <Link
+                    href={l.href}
+                    className="group inline-flex items-center gap-1 transition-colors hover:text-primary"
+                  >
+                    <span className="transition-transform duration-200 group-hover:translate-x-1">
+                      {l.label}
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -106,8 +116,17 @@ export default function Footer() {
               </li>
               <li className="flex gap-3">
                 <Mail size={18} className="mt-0.5 shrink-0 text-primary" />
-                <a href="mailto:fortifywatch@gmail.com" className="hover:text-primary">
-                  fortifywatch@gmail.com
+                <a
+                  href="mailto:fortifywatch@gmail.com"
+                  className="group inline-flex items-center gap-1 transition-colors hover:text-primary"
+                >
+                  <span className="transition-transform duration-200 group-hover:translate-x-1">
+                    fortifywatch@gmail.com
+                  </span>
+                  <ArrowUpRight
+                    size={13}
+                    className="opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                  />
                 </a>
               </li>
               <li>

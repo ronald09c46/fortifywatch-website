@@ -1,4 +1,6 @@
 import { Quote } from "lucide-react";
+import AnimatedSection from "@/components/ui/AnimatedSection";
+import { StaggerGrid, StaggerItem } from "@/components/ui/StaggerGrid";
 
 const testimonials = [
   {
@@ -25,23 +27,27 @@ export default function Testimonials() {
   return (
     <section className="bg-background py-24">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid gap-6 lg:grid-cols-3">
-          {testimonials.map((t) => (
-            <figure
-              key={t.name + t.role}
-              className="flex flex-col rounded-2xl border border-border bg-card p-8"
-            >
-              <Quote className="text-primary" size={28} />
-              <blockquote className="mt-5 flex-1 text-sm leading-7 text-muted-foreground">
-                &ldquo;{t.quote}&rdquo;
-              </blockquote>
-              <figcaption className="mt-6 border-t border-border pt-5">
-                <p className="font-display text-sm font-bold text-foreground">{t.name}</p>
-                <p className="text-xs text-muted-foreground">{t.role}</p>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+        <AnimatedSection>
+          <StaggerGrid className="grid gap-6 lg:grid-cols-3">
+            {testimonials.map((t) => (
+              <StaggerItem key={t.name + t.role}>
+                <figure className="group flex h-full flex-col rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-[var(--shadow-card)]">
+                  <Quote
+                    className="text-primary transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110"
+                    size={28}
+                  />
+                  <blockquote className="mt-5 flex-1 text-sm leading-7 text-muted-foreground">
+                    &ldquo;{t.quote}&rdquo;
+                  </blockquote>
+                  <figcaption className="mt-6 border-t border-border pt-5">
+                    <p className="font-display text-sm font-bold text-foreground">{t.name}</p>
+                    <p className="text-xs text-muted-foreground">{t.role}</p>
+                  </figcaption>
+                </figure>
+              </StaggerItem>
+            ))}
+          </StaggerGrid>
+        </AnimatedSection>
       </div>
     </section>
   );

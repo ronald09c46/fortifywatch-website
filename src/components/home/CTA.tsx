@@ -1,10 +1,14 @@
 import Link from "next/link";
 import { Phone } from "lucide-react";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 
 export default function CTA() {
   return (
     <section className="bg-background py-24">
-      <div className="mx-auto max-w-4xl rounded-3xl px-8 py-16 text-center" style={{ background: "var(--gradient-navy)" }}>
+      <AnimatedSection
+        className="mx-auto max-w-4xl overflow-hidden rounded-3xl px-8 py-16 text-center transition-shadow duration-500 hover:shadow-[var(--shadow-gold)]"
+        style={{ background: "var(--gradient-navy)" }}
+      >
         <p className="font-display text-sm font-bold uppercase tracking-widest text-primary">
           Ready When You Are
         </p>
@@ -19,18 +23,19 @@ export default function CTA() {
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <Link
             href="/contact"
-            className="rounded-lg bg-primary px-8 py-4 font-bold text-primary-foreground transition hover:opacity-90"
+            className="rounded-lg bg-primary px-8 py-4 font-bold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90"
           >
             Request a Quote
           </Link>
           <a
             href="tel:+639171104556"
-            className="flex items-center gap-2 rounded-lg border border-border px-8 py-4 font-semibold text-foreground transition hover:bg-secondary"
+            className="group flex items-center gap-2 rounded-lg border border-border px-8 py-4 font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-secondary"
           >
-            <Phone size={18} /> Call +63 917 110 4556
+            <Phone size={18} className="transition-transform duration-300 group-hover:rotate-12" />
+            Call +63 917 110 4556
           </a>
         </div>
-      </div>
+      </AnimatedSection>
     </section>
   );
 }

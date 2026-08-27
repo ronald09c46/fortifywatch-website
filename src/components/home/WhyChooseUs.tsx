@@ -9,6 +9,8 @@ import {
   Users,
 } from "lucide-react";
 import FeatureCard from "@/components/ui/FeatureCard";
+import AnimatedSection from "@/components/ui/AnimatedSection";
+import { StaggerGrid, StaggerItem } from "@/components/ui/StaggerGrid";
 
 const reasons = [
   {
@@ -61,20 +63,22 @@ export default function WhyChooseUs({
   return (
     <section className="bg-background py-24">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mx-auto max-w-2xl text-center">
+        <AnimatedSection className="mx-auto max-w-2xl text-center">
           <p className="font-display text-sm font-bold uppercase tracking-widest text-primary">
             Why Choose FortifyWatch
           </p>
           <h2 className="mt-4 font-display text-4xl font-bold text-foreground">
             {title}
           </h2>
-        </div>
+        </AnimatedSection>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <StaggerGrid className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {reasons.map((r) => (
-            <FeatureCard key={r.title} icon={r.icon} title={r.title} description={r.description} />
+            <StaggerItem key={r.title}>
+              <FeatureCard icon={r.icon} title={r.title} description={r.description} />
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGrid>
       </div>
     </section>
   );

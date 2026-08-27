@@ -1,3 +1,5 @@
+import AnimatedSection from "@/components/ui/AnimatedSection";
+
 export default function PageHeader({
   kicker,
   title,
@@ -9,7 +11,7 @@ export default function PageHeader({
 }) {
   return (
     <section className="border-b border-border/60 bg-navy-deep pb-16 pt-40">
-      <div className="mx-auto max-w-4xl px-6 text-center">
+      <AnimatedSection className="mx-auto max-w-4xl px-6 text-center">
         <p className="font-display text-sm font-bold uppercase tracking-widest text-primary">
           {kicker}
         </p>
@@ -19,7 +21,7 @@ export default function PageHeader({
         {description && (
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">{description}</p>
         )}
-      </div>
+      </AnimatedSection>
     </section>
   );
 }

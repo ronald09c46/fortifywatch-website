@@ -1,3 +1,6 @@
+import AnimatedSection from "@/components/ui/AnimatedSection";
+import { StaggerGrid, StaggerItem } from "@/components/ui/StaggerGrid";
+
 const steps = [
   {
     number: "01",
@@ -41,30 +44,32 @@ export default function Process({
   return (
     <section className="bg-navy-deep py-24">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mx-auto max-w-2xl text-center">
+        <AnimatedSection className="mx-auto max-w-2xl text-center">
           <p className="font-display text-sm font-bold uppercase tracking-widest text-primary">
             {kicker}
           </p>
           <h2 className="mt-4 font-display text-4xl font-bold text-foreground">
             {title}
           </h2>
-        </div>
+        </AnimatedSection>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <StaggerGrid className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {steps.map((step) => (
-            <div key={step.number} className="rounded-2xl border border-border bg-card p-7">
-              <span className="font-display text-3xl font-extrabold text-primary/50">
-                {step.number}
-              </span>
-              <h3 className="mt-3 font-display text-lg font-bold text-foreground">
-                {step.title}
-              </h3>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                {step.description}
-              </p>
-            </div>
+            <StaggerItem key={step.number}>
+              <div className="group h-full rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-[var(--shadow-card)]">
+                <span className="font-display text-3xl font-extrabold text-primary/50 transition-colors duration-300 group-hover:text-primary">
+                  {step.number}
+                </span>
+                <h3 className="mt-3 font-display text-lg font-bold text-foreground">
+                  {step.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                  {step.description}
+                </p>
+              </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGrid>
       </div>
     </section>
   );

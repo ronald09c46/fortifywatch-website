@@ -1,66 +1,69 @@
-import Image from "next/image";
 import Link from "next/link";
+import AnimatedSection from "@/components/ui/AnimatedSection";
+import { StaggerGrid, StaggerItem } from "@/components/ui/StaggerGrid";
 
 export default function About() {
   return (
-    <section className="bg-background py-24">
-      <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 md:grid-cols-2">
-        <div>
-          <p className="font-display text-sm font-bold uppercase tracking-widest text-primary">
+    <section className="bg-background py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8">
+        {/* Header & Description */}
+        <AnimatedSection className="mx-auto max-w-4xl text-center">
+          <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-primary sm:text-sm">
             About FortifyWatch
           </p>
 
-          <h2 className="mt-4 font-display text-4xl font-bold text-foreground">
+          <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-foreground sm:mt-4 sm:text-4xl lg:text-5xl">
             Discipline and vigilance, applied to your operations
           </h2>
 
-          <p className="mt-8 leading-8 text-muted-foreground">
+          <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-muted-foreground sm:mt-8 sm:text-base sm:leading-8 lg:text-lg">
             FortifyWatch Security Agency is a licensed Philippine private
             security agency built on a simple principle: security is only as
             strong as the people who deliver it. We screen, train, and
             supervise every officer we deploy.
           </p>
+        </AnimatedSection>
 
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
-            <div className="rounded-xl border border-border bg-card p-6">
-              <p className="font-display text-xs font-bold uppercase tracking-widest text-primary">
+        {/* Mission & Vision */}
+        <StaggerGrid className="mx-auto mt-10 grid w-full max-w-5xl gap-5 sm:mt-12 sm:gap-6 md:grid-cols-2">
+          <StaggerItem>
+            <div className="h-full rounded-xl border border-border bg-card p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[var(--shadow-card)] sm:p-6 lg:p-8">
+              <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-primary">
                 Mission
               </p>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+
+              <p className="mt-3 text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
                 To provide highly trained, disciplined, and professional
-                security personnel committed to protecting people,
-                businesses, and assets through integrity, vigilance, and
-                excellence.
+                security personnel committed to protecting people, businesses,
+                and assets through integrity, vigilance, and excellence.
               </p>
             </div>
-            <div className="rounded-xl border border-border bg-card p-6">
-              <p className="font-display text-xs font-bold uppercase tracking-widest text-primary">
+          </StaggerItem>
+
+          <StaggerItem>
+            <div className="h-full rounded-xl border border-border bg-card p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[var(--shadow-card)] sm:p-6 lg:p-8">
+              <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-primary">
                 Vision
               </p>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                To become one of the most trusted and respected private
-                security agencies in the Philippines by delivering
-                world-class security solutions.
+
+              <p className="mt-3 text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
+                To become one of the most trusted and respected private security
+                agencies in the Philippines by delivering world-class security
+                solutions.
               </p>
             </div>
-          </div>
+          </StaggerItem>
+        </StaggerGrid>
 
+        {/* Button */}
+        <AnimatedSection className="mt-8 text-center sm:mt-10">
           <Link
             href="/about"
-            className="mt-10 inline-block rounded-lg bg-secondary px-8 py-4 font-semibold text-foreground transition hover:bg-secondary/70"
+            className="inline-flex w-full items-center justify-center rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-secondary/70 sm:w-auto sm:px-8 sm:py-4 sm:text-base"
           >
             More About Us
           </Link>
-        </div>
-
-        <div className="relative h-[450px] overflow-hidden rounded-2xl border border-border">
-          <Image
-            src="/images/office/about-office.jpg"
-            alt="FortifyWatch Security Agency office"
-            fill
-            className="object-cover"
-          />
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );
