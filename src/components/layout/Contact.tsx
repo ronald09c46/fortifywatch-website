@@ -2,18 +2,72 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, CheckCircle2 } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, CheckCircle2, AlertCircle } from "lucide-react";
 import { allServices } from "@/data/services";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import Turnstile from "@/components/ui/Turnstile";
 
 const inputClass =
   "mt-2 w-full rounded-lg border border-border bg-card px-4 py-3 text-sm text-foreground outline-none transition-all duration-200 focus:border-primary focus:ring-2 focus:ring-primary/25";
 
-// TODO: this form is not yet wired to a backend. Submissions currently only
-// show a local confirmation message and are not emailed or stored anywhere.
-// Wire it to an API route (e.g. send to fortifywatch@gmail.com) before launch.
+const initialForm = {
+  name: "",
+  company: "",
+  email: "",
+  phone: "",
+  service: "",
+  message: "",
+};
+
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+  const [form, setForm] = useState(initialForm);
+  const [honeypot, setHoneypot] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
+    "idle"
+  );
+  const [errorMessage, setErrorMessage] = useState("");
+
+  function updateField<K extends keyof typeof initialForm>(
+    field: K,
+    value: (typeof initialForm)[K]
+  ) {
+    setForm((prev) => ({ ...prev, [field]: value }));
+  }
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    if (!turnstileToken) {
+      setStatus("error");
+      setErrorMessage("Please complete the CAPTCHA verification before submitting.");
+      return;
+    }
+
+    setStatus("submitting");
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, turnstileToken, honeypot }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data?.error || "Something went wrong. Please try again.");
+      }
+
+      setStatus("success");
+    } catch (err) {
+      setStatus("error");
+      setErrorMessage(
+        err instanceof Error ? err.message : "Something went wrong. Please try again."
+      );
+    }
+  }
 
   return (
     <section className="bg-background py-24">
@@ -24,7 +78,7 @@ export default function Contact() {
             All fields marked with an asterisk are required.
           </p>
 
-          {submitted ? (
+          {status === "success" ? (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -34,17 +88,24 @@ export default function Contact() {
               <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-primary" />
               <span>
                 Thank you — your inquiry has been noted. Our account officers
-                respond within one business day.
+                respond within one business day. A confirmation email is on its
+                way to your inbox.
               </span>
             </motion.div>
           ) : (
-            <form
-              className="mt-8 space-y-5"
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSubmitted(true);
-              }}
-            >
+            <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
+              {/* Honeypot field — hidden from real users, catches basic bots */}
+              <input
+                type="text"
+                name="company_website"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                className="hidden"
+                aria-hidden="true"
+              />
+
               <div>
                 <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
                   Name *
@@ -52,6 +113,8 @@ export default function Contact() {
                 <input
                   required
                   type="text"
+                  value={form.name}
+                  onChange={(e) => updateField("name", e.target.value)}
                   className={inputClass}
                 />
               </div>
@@ -61,6 +124,8 @@ export default function Contact() {
                 </label>
                 <input
                   type="text"
+                  value={form.company}
+                  onChange={(e) => updateField("company", e.target.value)}
                   className={inputClass}
                 />
               </div>
@@ -72,6 +137,8 @@ export default function Contact() {
                   <input
                     required
                     type="email"
+                    value={form.email}
+                    onChange={(e) => updateField("email", e.target.value)}
                     className={inputClass}
                   />
                 </div>
@@ -82,6 +149,8 @@ export default function Contact() {
                   <input
                     required
                     type="tel"
+                    value={form.phone}
+                    onChange={(e) => updateField("phone", e.target.value)}
                     className={inputClass}
                   />
                 </div>
@@ -92,7 +161,8 @@ export default function Contact() {
                 </label>
                 <select
                   required
-                  defaultValue=""
+                  value={form.service}
+                  onChange={(e) => updateField("service", e.target.value)}
                   className={inputClass}
                 >
                   <option value="" disabled>
@@ -113,14 +183,30 @@ export default function Contact() {
                 <textarea
                   required
                   rows={4}
+                  value={form.message}
+                  onChange={(e) => updateField("message", e.target.value)}
                   className={inputClass}
                 />
               </div>
+
+              <Turnstile
+                onVerify={setTurnstileToken}
+                onExpire={() => setTurnstileToken("")}
+              />
+
+              {status === "error" && (
+                <div className="flex items-start gap-2 rounded-lg border border-red-500/40 bg-red-500/10 p-3 text-sm text-red-500">
+                  <AlertCircle size={16} className="mt-0.5 shrink-0" />
+                  <span>{errorMessage}</span>
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full rounded-lg bg-primary px-8 py-4 font-bold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90 hover:shadow-[var(--shadow-gold)] active:translate-y-0 sm:w-auto"
+                disabled={status === "submitting"}
+                className="w-full rounded-lg bg-primary px-8 py-4 font-bold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90 hover:shadow-[var(--shadow-gold)] active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 sm:w-auto"
               >
-                Send Inquiry
+                {status === "submitting" ? "Sending..." : "Send Inquiry"}
               </button>
             </form>
           )}

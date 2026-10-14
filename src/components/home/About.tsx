@@ -28,7 +28,7 @@ export default function About() {
         {/* Mission & Vision */}
         <StaggerGrid className="mx-auto mt-10 grid w-full max-w-5xl gap-5 sm:mt-12 sm:gap-6 md:grid-cols-2">
           <StaggerItem>
-            <div className="group flex h-full flex-col items-center rounded-xl border border-border bg-card p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[var(--shadow-card)] sm:p-6 lg:p-8">
+            <div className="group flex h-full flex-col items-center justify-center rounded-xl border border-border bg-card p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[var(--shadow-card)] sm:p-6 lg:p-8">
               <div className="grid size-12 place-items-center rounded-xl bg-primary/10 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-primary/20">
                 <Target size={22} className="text-primary" />
               </div>
@@ -38,31 +38,12 @@ export default function About() {
               </p>
 
               <p className="mt-3 text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
-                FortifyWatch Security Agency is committed to:
+                FORTIFYWATCH is committed to providing reliable and
+                professional security services, protecting lives, property,
+                and businesses, and upholding discipline, integrity, and
+                accountability while building strong client relationships
+                through quality service.
               </p>
-
-              <ul className="mt-3 w-full space-y-2 text-left text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
-                <li className="flex gap-2">
-                  <span className="text-primary">&bull;</span>
-                  Providing reliable and professional security services
-                  tailored to our clients&apos; needs.
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">&bull;</span>
-                  Protecting lives, properties, and business operations
-                  through effective security management.
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">&bull;</span>
-                  Upholding the highest standards of discipline, integrity,
-                  and accountability.
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">&bull;</span>
-                  Building lasting partnerships through quality service and
-                  continuous improvement.
-                </li>
-              </ul>
             </div>
           </StaggerItem>
 

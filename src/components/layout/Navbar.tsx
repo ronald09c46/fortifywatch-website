@@ -56,7 +56,7 @@ export default function Navbar() {
               alt="FortifyWatch Security Agency"
               width={40}
               height={40}
-              className="size-10 shrink-0 transition-transform duration-300 group-hover:scale-110"
+              className="size-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110"
             />
             <span className="truncate font-display text-lg font-bold tracking-tight text-foreground">
               FORTIFYWATCH

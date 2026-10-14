@@ -32,7 +32,7 @@ export default function Footer() {
                 alt="FortifyWatch Security Agency"
                 width={40}
                 height={40}
-                className="size-10"
+                className="size-10 object-contain"
               />
               <span className="font-display text-lg font-bold text-foreground">
                 FORTIFYWATCH
