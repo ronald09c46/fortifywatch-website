@@ -11,15 +11,15 @@ const testimonials = [
   },
   {
     quote:
-      "Their guards are courteous with residents but firm at the gate. Reports arrive on time and the detachment commander is genuinely reachable.",
-    name: "HOA President",
-    role: "Residential Community, Bacoor City",
+      "Their guards are warm with our diners but sharp at the door. Peak hours and late closings run smoothly, and our staff feel safer locking up at night.",
+    name: "Restaurant Manager",
+    role: "Restaurant, Bacoor City",
   },
   {
     quote:
-      "The security survey they prepared before deployment was more thorough than proposals from far larger agencies.",
-    name: "Administrative Officer",
-    role: "Private Medical Facility, Metro Manila",
+      "Handling a busy gaming floor and cash areas takes discipline. FortifyWatch guards keep crowd control calm, follow our cash escort procedures, and report incidents on time.",
+    name: "Branch Manager",
+    role: "E-Bingo Gaming Site, Metro Manila",
   },
 ];
 
