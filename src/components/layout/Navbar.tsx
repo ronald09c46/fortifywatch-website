@@ -10,7 +10,8 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Careers", href: "/careers" },
+  // Hidden while not hiring — uncomment to show the Careers tab again.
+  // { label: "Careers", href: "/careers" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ];

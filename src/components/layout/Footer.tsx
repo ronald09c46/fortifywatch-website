@@ -5,7 +5,8 @@ import { MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
 const quickLinks = [
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Careers", href: "/careers" },
+  // Hidden while not hiring — uncomment to show the Careers link again.
+  // { label: "Careers", href: "/careers" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ];

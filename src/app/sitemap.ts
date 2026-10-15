@@ -22,12 +22,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
-    {
-      url: `${baseUrl}/careers`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
+    // Careers hidden while not hiring — restore this entry when hiring resumes.
+    // {
+    //   url: `${baseUrl}/careers`,
+    //   lastModified: new Date(),
+    //   changeFrequency: "weekly",
+    //   priority: 0.7,
+    // },
     {
       url: `${baseUrl}/faq`,
       lastModified: new Date(),

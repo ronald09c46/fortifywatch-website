@@ -61,7 +61,7 @@ export default function AboutPage() {
 
           {/* Mission & Vision */}
           <div className="mx-auto mt-10 grid max-w-5xl gap-5 sm:mt-12 sm:gap-6 md:grid-cols-2">
-            <AnimatedCard direction="left" className="group flex flex-col items-center">
+            <AnimatedCard direction="left" className="group flex flex-col items-center justify-center">
               <div className="grid size-12 place-items-center rounded-xl bg-primary/10 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-primary/20">
                 <Target size={22} className="text-primary" />
               </div>
@@ -71,31 +71,12 @@ export default function AboutPage() {
               </p>
 
               <p className="mt-3 text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
-                FortifyWatch Security Agency is committed to:
+                FORTIFYWATCH is committed to providing reliable and
+                professional security services, protecting lives, property,
+                and businesses, and upholding discipline, integrity, and
+                accountability while building strong client relationships
+                through quality service.
               </p>
-
-              <ul className="mt-3 w-full space-y-2 text-left text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
-                <li className="flex gap-2">
-                  <span className="text-primary">&bull;</span>
-                  Providing reliable and professional security services
-                  tailored to our clients&apos; needs.
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">&bull;</span>
-                  Protecting lives, properties, and business operations
-                  through effective security management.
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">&bull;</span>
-                  Upholding the highest standards of discipline, integrity,
-                  and accountability.
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">&bull;</span>
-                  Building lasting partnerships through quality service and
-                  continuous improvement.
-                </li>
-              </ul>
             </AnimatedCard>
 
             <AnimatedCard direction="right" className="group flex flex-col items-center justify-center">

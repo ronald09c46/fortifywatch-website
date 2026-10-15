@@ -248,12 +248,26 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* TODO: replace with a real embedded Google Map for the Molino IV, Bacoor City office once available */}
-          <div className="mt-6 grid h-56 place-items-center rounded-2xl border border-dashed border-border text-center text-sm text-muted-foreground">
-            Google Map Placeholder
-            <br />
-            Molino IV, Bacoor City, Cavite — embed your Google Maps location here.
+          <div className="mt-6 overflow-hidden rounded-2xl border border-border">
+            <iframe
+              title="FortifyWatch Security Agency on Google Maps"
+              src="https://maps.google.com/maps?q=14.3724312,120.9756305&z=16&hl=en&output=embed"
+              className="block h-72 w-full"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
+          <a
+            href="https://www.google.com/maps/place/FORTIFYWATCH+SECURITY+AGENCY/@14.3724364,120.9730556,766m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3397d3ed4413e267:0x4dbc2d3bd7f6601c!8m2!3d14.3724312!4d120.9756305!16s%2Fg%2F11zcsjp5pf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+          >
+            <MapPin size={16} />
+            Open in Google Maps
+          </a>
         </AnimatedSection>
       </div>
     </section>
